@@ -6,4 +6,4 @@ function lowerInitial(word) {
   return word[0].toLowerCase();  // word is guaranteed to have at least
 }                                // 1 character, so word[0] never evaluates as undefined.
 
-console.log(lowerInitial(undefined))
+console.log(lowerInitial(undefined));

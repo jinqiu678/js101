@@ -8,6 +8,11 @@
 const MESSAGES = require('./calculator_messages.json');
 const readline = require('readline-sync');
 
+function messages(message, lang = 'en') {
+  return MESSAGES[lang][message];
+}
+
+
 function prompt(message) {
   console.log(`=> ${message}`);
 }
@@ -19,29 +24,29 @@ function invalidNumber(number) {
 let tryAgain = '';
 
 do {
-  prompt(MESSAGES['welcome']);
+  prompt(messages('welcome', 'fr'));
 
-  prompt(MESSAGES['firstNumber']);
+  prompt(messages('firstNumber', 'fr'));
   let number1 = readline.question();
 
   while (invalidNumber(number1)) {
-    prompt(MESSAGES['invalidNumber']);
+    prompt(messages('invalidNumber', 'fr'));
     number1 = readline.question();
   }
 
-  prompt(MESSAGES['secondNumber']);
+  prompt(messages('secondNumber', 'fr'));
   let number2 = readline.question();
 
   while (invalidNumber(number2)) {
-    prompt(MESSAGES['invlaidNumber']);
+    prompt(messages('invlaidNumber', 'fr'));
     number2 = readline.question();
   }
 
-  prompt(MESSAGES['operationSelection']);
+  prompt(messages('operationSelection', 'fr'));
   let operation = readline.question();
 
   while (!['1', '2', '3', '4'].includes(operation)) {
-    prompt(MESSAGES['chooseRightOperation']);
+    prompt(messages('chooseRightOperation', 'fr'));
     operation = readline.question();
   }
 
@@ -61,8 +66,8 @@ do {
       break;
   }
 
-  prompt(`${MESSAGES['resultIs']} ${output}`);
+  prompt(`${messages('resultIs', 'fr')} ${output}`);
 
-  prompt(MESSAGES['calculateAgain']);
+  prompt(messages('calculateAgain', 'fr'));
   tryAgain = readline.question().toLowerCase();
 } while (tryAgain === 'yes');

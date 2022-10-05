@@ -1,10 +1,24 @@
-{
-  "welcome": "Welcome to Calculator!",
-  "firstNumber": "What's the first number?",
-  "secondNumber": "What's the second number?",
-  "invalidNumber": "Hmm... that doesn't look like a valid number.",
-  "operationSelection": "What operation would you like to perform?\n1) Add 2) Subtract 3) Multiply 4) Divide",
-  "chooseRightOperation": "Must choose 1, 2, 3 or 4",
-  "resultIs": "The result is:",
-  "calculateAgain": "Would you like to calculate again?"
+{"en": 
+  {
+    "welcome": "Welcome to Calculator!",
+    "firstNumber": "What's the first number?",
+    "secondNumber": "What's the second number?",
+    "invalidNumber": "Hmm... that doesn't look like a valid number.",
+    "operationSelection": "What operation would you like to perform?\n1) Add 2) Subtract 3) Multiply 4) Divide",
+    "chooseRightOperation": "Must choose 1, 2, 3 or 4",
+    "resultIs": "The result is:",
+    "calculateAgain": "Would you like to calculate again?"
+  },
+  "fr":
+  {
+    "welcome": "fr Welcome to Calculator!",
+    "firstNumber": "fr What's the first number?",
+    "secondNumber": "fr What's the second number?",
+    "invalidNumber": "fr Hmm... that doesn't look like a valid number.",
+    "operationSelection": "fr What operation would you like to perform?\n1) Add 2) Subtract 3) Multiply 4) Divide",
+    "chooseRightOperation": "fr Must choose 1, 2, 3 or 4",
+    "resultIs": "fr The result is:",
+    "calculateAgain": "fr Would you like to calculate again?"
+
+  }
 }
