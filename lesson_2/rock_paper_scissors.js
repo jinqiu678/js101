@@ -11,18 +11,18 @@ function simplifyChoice(userChoice) {
   return VALID_CHOICES[userChoice] || userChoice;
 }
 
+
+const WINNING_MOVES = {
+  rock: ['scissors', 'lizard'], // rock beats scissors and lizard
+  paper: ['rock', 'spock'], // paper beats rock and spock
+  scissors: ['paper', 'lizard'],
+  lizard: ['spoke', 'paper'],
+  spock: ['scissors', 'rock']
+};
+
 // Adding spock and lizard to the RPS options
 function playerWins(userChoice, computerChoice) {
-  return (userChoice === 'rock' && computerChoice === 'scissors') ||
-         (userChoice === 'rock' && computerChoice === 'lizard') ||
-         (userChoice === 'paper' && computerChoice === 'rock') ||
-         (userChoice === 'paper' && computerChoice === 'spock') ||
-         (userChoice === 'scissors' && computerChoice === 'paper') ||
-         (userChoice === 'scissors' && computerChoice === 'lizard') ||
-         (userChoice === 'lizard' && computerChoice === 'paper') ||
-         (userChoice === 'lizard' && computerChoice === 'spock') ||
-         (userChoice === 'spock' && computerChoice === 'rock') ||
-         (userChoice === 'spock' && computerChoice === 'scissors');
+  return WINNING_MOVES[userChoice].includes(computerChoice);
 }
 
 function returnWinner(userChoice, computerChoice) {
