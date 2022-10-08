@@ -1,22 +1,14 @@
 const readline = require('readline-sync');
-const VALID_CHOICES = ['rock', 'paper', 'scissors', 'spock', 'lizard', 'r', 'p', 's', 'sp', 'l'];
+const VALID_CHOICES = {
+  r: "rock",
+  p: "paper",
+  s: "scissors",
+  sp: "spock",
+  l: "lizard",
+};
 
-// reassigning abbreviation to full word
 function simplifyChoice(userChoice) {
-  if (userChoice === 'r') {
-    userChoice = 'rock'
-  } else if (userChoice === 'p') {
-    userCHoice = 'paper'
-  } else if (userChoice === 's') {
-    userChoice = 'scissors'
-  } else if (userChoice === 'sp') {
-    userChoice = 'spock'
-  } else if (userChoice === 'l') {
-    userChoice = 'lizard'
-  } else
-  userChoice = userChoice
-
-  return userChoice
+  return VALID_CHOICES[userChoice] || userChoice;
 }
 
 // Adding spock and lizard to the RPS options
@@ -39,7 +31,7 @@ function returnWinner(userChoice, computerChoice) {
   } else if (userChoice === computerChoice) {
     return 'tie';
   } else {
-    return "computer";
+    return 'computer';
   }
 
 }
@@ -61,24 +53,30 @@ function addScore(winner) {
   }
 }
 
+function getComputerChoice() {
+  let randomIndex = Math.floor(Math.random() *
+  Object.keys(VALID_CHOICES).length);
+  let randomKey = Object.keys(VALID_CHOICES)[randomIndex];
+  let computerChoice = VALID_CHOICES[randomKey];
+  return computerChoice;
+}
 do {
   // User choose
-  prompt(`Choose one: ${VALID_CHOICES.join(', ')}`);
+  prompt(`Choose one: ${Object.entries(VALID_CHOICES).join(', ')}`);
   let userChoice = readline.question();
-  userChoice = simplifyChoice(userChoice)
-  console.log(userChoice)
+  userChoice = simplifyChoice(userChoice.toLowerCase());
+  console.clear();
 
-  while (!VALID_CHOICES.includes(userChoice)) {
+  while (!Object.values(VALID_CHOICES).includes(userChoice)) {
     prompt("That's not a valid choice, please choose again");
-    userChoice = readline.question().toLowerCase();
+    userChoice = simplifyChoice(readline.question().toLowerCase());
   }
 
   // computer choice
-  let randomIndex = Math.ceil(Math.random() * VALID_CHOICES.length) - 1;
-  let computerChoice = simplifyChoice(VALID_CHOICES[randomIndex]);
+  getComputerChoice();
 
-  prompt(`You chose ${userChoice}, computer chose ${computerChoice}`);
-  let winner = returnWinner(userChoice, computerChoice);
+  prompt(`You chose ${userChoice}, computer chose ${getComputerChoice()}`);
+  let winner = returnWinner(userChoice, getComputerChoice());
 
   // adding score to winner
   addScore(winner);
@@ -87,5 +85,6 @@ do {
   // count of number of wins
   prompt(`You won ${userScore} times, computer won ${computerScore} times, 
   winner will be best out of 5!`);
+
 
 } while ((userScore < 3) && (computerScore < 3));

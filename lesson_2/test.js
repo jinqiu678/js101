@@ -1,9 +1,5 @@
-let names = ['kim', 'joe', 'sam'];
-names.forEach((ele, index) => {
-  console.log(`${[ele ,index]}`);
-});
+function foo(a) {
+  return 6;
+}
 
-// logs
-// => 1: Got a name!
-// => 2: Got a name!
-// => 3: Got a name!
+foo([1, 2, 3]);
