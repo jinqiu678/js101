@@ -33,7 +33,6 @@ function returnWinner(userChoice, computerChoice) {
   } else {
     return 'computer';
   }
-
 }
 
 function prompt(message) {
@@ -73,7 +72,7 @@ do {
   }
 
   // computer choice
-  getComputerChoice();
+  console.log(getComputerChoice());
 
   prompt(`You chose ${userChoice}, computer chose ${getComputerChoice()}`);
   let winner = returnWinner(userChoice, getComputerChoice());
