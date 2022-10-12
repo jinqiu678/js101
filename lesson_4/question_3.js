@@ -1,0 +1,1 @@
+[1, 2, 3].map(num => num * num); // returns new array with each element squared, there is return statement in arrow function

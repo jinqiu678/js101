@@ -1,0 +1,1 @@
+['ant', 'bear', 'caterpillar'].pop().length; // 11, pop returns last element and mutates original array
