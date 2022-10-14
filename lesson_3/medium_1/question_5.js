@@ -1,11 +1,2 @@
-function addToRollingBuffer2(maxBufferSize, newElement) {
-  buffer = buffer.concat(newElement);
-  if (buffer.length > maxBufferSize) {
-    buffer.shift();
-  }
-  return buffer;
-}
-
-buffer = []
-console.log(addToRollingBuffer2([], 4, 'a b'));
-console.log(buffer)
+console.log(0.3 + 0.6); //.9
+console.log(0.3 + 0.6 === 0.9); //.3

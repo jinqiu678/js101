@@ -6,4 +6,5 @@ function messWithIt(someNumber) {
 
 let newAnswer = messWithIt(answer);
 
-console.log(answer - 8);
+console.log(answer - 8); // => 34
+

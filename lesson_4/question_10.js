@@ -9,5 +9,4 @@ let ages = {
 
 
 let agesValues = Object.values(ages);
-Math.min(...agesValues); // => 10;
-
+Math.min(...agesValues);
